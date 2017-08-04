@@ -1,0 +1,16 @@
+Dependencies:
+
+[NLog]
+	License: BSD license
+	http://www.nlog-project.org/
+	
+[System.Data.SQLite]
+	License: Public Domain
+	http://sqlite.phxsoftware.com/
+
+[SQLite]
+	License: Public Domain
+	http://www.sqlite.org/
+
+[AsyncHttpd]
+	https://github.com/ivarptr/asynchttpd

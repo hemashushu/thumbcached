@@ -1,0 +1,107 @@
+ThumbCached use HTTP/1.1 protocol for communications.
+
+Add item:
+----------------------------------------------------
+Request:
+	POST /update/ITEM_KEY?expire=EXPIRATION_SECOND&abs=EXPIRATION_TYPE HTTP/1.1
+	Host: HOSTNAME:PORT
+	Content-Length: INTEGER
+	Content-Type: THUMBCACHED_DATA_TYPE_NAME
+	Last-Modified: GMT_DATE_TIME
+	[\r\n]
+	[BINARY_DATA]
+	
+ITEM_KEY: a string to name an item
+EXPIRATION_SECOND: an integer number to specify the item expiration time (take effective in non-persistance mode only)
+EXPIRATION_TYPE: a number '0' or '1', if it equal to '1' that means absolute expire.
+THUMBCACHED_DATA_TYPE_NAME: combine with 'tcd/' and an integer number, 
+				enum DataTypeNumber
+				{
+					Binary =0,
+					Object =1,
+					Boolean =3,
+					Int32 =9,
+					Int64 =11,
+					Single = 13,
+					Double = 14,
+					DateTime = 16,
+					String = 18,
+					EmptyByteArray = 256 + 6,
+					EmptyString = 256 + 18
+				}
+GMT_DATE_TIME: specify the item time, take effecive in persistance mode.
+
+Response:
+	HTTP/1.1 200 OK
+	Content-Length: 0
+	
+Get item:
+----------------------------------------------------
+Request:
+	GET /fetch/ITEM_KEY HTTP/1.1
+	If-Modified_Since: GMT_DATE_TIME
+	
+GMT_DATE_TIME: specify one time to test the item last modified time, if the item
+	does not modified since GMT_DATE_TIME, this request will return 304-Not Modified http status code. 
+
+Response:
+	HTTP/1.1 200 OK
+	Content-Type: THUMBCACHED_DATA_TYPE_NAME
+	Content-Length: INTEGER
+	Last-Modified: GMT_DATE_TIME
+	[\r\n]
+	[BINARY_DATA]
+
+if the specify item does not exist, this response will return 404-Not Found http status code.
+
+Get multi-items:
+----------------------------------------------------
+Request:
+	GET /multifetch/?keys=KEY1,KEY2,KEY3... HTTP/1.1
+
+Response:
+	HTTP/1.1 200 OK
+	Content-Length: INTEGER
+	[\r\n]
+	KEY1
+	THUMBCACHED_DATA_TYPE_NAME
+	GMT_DATE_TIME
+	DATA_LENGTH
+	[BINARY_DATA]
+	[\r\n]
+	KEY2
+	THUMBCACHED_DATA_TYPE_NAME
+	GMT_DATE_TIME
+	DATA_LENGTH
+	[BINARY_DATA]
+	[\r\n]
+	KEY3
+	......
+	
+if one of keys does not exist, this item will not return anything.
+
+
+Remove item:
+----------------------------------------------------
+Request:
+	GET /remove/ITEM_KEY HTTP/1.1
+	
+Response:
+	HTTP/1.1 200 OK
+	
+
+Get server status:
+----------------------------------------------------
+Request:
+	GET /status	HTTP/1.1
+	
+Response:
+	HTTP/1.1 200 OK
+	Content-Type: text/plain
+	Content-Length: INTEGER
+	[\r\n]
+	Pool memory: INTEGER
+	Used memory: INTEGER
+	Item amount: INTEGER
+	Item hits: INTEGER
+	

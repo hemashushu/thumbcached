@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThumbCachedService", "ThumbCachedService\ThumbCachedService.csproj", "{EDBE0705-DA76-4E11-AA15-E97CDE02624E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThumbCachedServer", "ThumbCachedServer\ThumbCachedServer.csproj", "{A301BEDA-A213-4624-A3C4-9A6F5E8EF556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CachingHttpHandler", "CachingHttpHandler\CachingHttpHandler.csproj", "{025C15FF-D98F-4AA2-BF60-2137540B153D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching", "Caching\Caching.csproj", "{20528D13-749D-4D1E-B028-A34A7A8CF60A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpService", "..\Asynchttpd\HttpService\HttpService.csproj", "{09E7BD53-3AE1-4494-A5E0-58E2625EBBEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDBE0705-DA76-4E11-AA15-E97CDE02624E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDBE0705-DA76-4E11-AA15-E97CDE02624E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDBE0705-DA76-4E11-AA15-E97CDE02624E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDBE0705-DA76-4E11-AA15-E97CDE02624E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A301BEDA-A213-4624-A3C4-9A6F5E8EF556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A301BEDA-A213-4624-A3C4-9A6F5E8EF556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A301BEDA-A213-4624-A3C4-9A6F5E8EF556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A301BEDA-A213-4624-A3C4-9A6F5E8EF556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{025C15FF-D98F-4AA2-BF60-2137540B153D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{025C15FF-D98F-4AA2-BF60-2137540B153D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{025C15FF-D98F-4AA2-BF60-2137540B153D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{025C15FF-D98F-4AA2-BF60-2137540B153D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20528D13-749D-4D1E-B028-A34A7A8CF60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20528D13-749D-4D1E-B028-A34A7A8CF60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20528D13-749D-4D1E-B028-A34A7A8CF60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20528D13-749D-4D1E-B028-A34A7A8CF60A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09E7BD53-3AE1-4494-A5E0-58E2625EBBEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09E7BD53-3AE1-4494-A5E0-58E2625EBBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09E7BD53-3AE1-4494-A5E0-58E2625EBBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09E7BD53-3AE1-4494-A5E0-58E2625EBBEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
